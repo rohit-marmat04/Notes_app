@@ -1,0 +1,2 @@
+Three Address Code (TAC) is an intermediate representation used in compilers, where each instruction contains at most three operands.
+It’s a way to break down complex high-level code into small, simple steps that are easier for the compiler to optimize and then translate into machine code.

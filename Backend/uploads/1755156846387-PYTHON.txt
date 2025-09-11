@@ -1,0 +1,190 @@
+# floats
+var1 = 12.333456
+print("The value is %3.4f"%var1)
+
+# string
+var2 = "Rohit"
+print(var2)
+
+# integer
+var3 = 25
+print(var3)
+
+# input from user
+var4 = input("Please enter value: ")
+print(var4)
+
+# to store any type of value in between string
+var5 = 455
+print("the value is {}".format(var5))
+
+# type casting in input or anywhere
+var6 = int(input("Please enter value1: "))
+var7 = int(input("Please enter value2: "))
+
+var8 = var6+var7
+
+print(var8)
+
+# when we convert string to integer - this will throw an error
+# var9 = "rohit"
+# var10 = int(var9)
+# print(var10)
+
+
+# errors - 1. var = "rohit" + 4 --> output- errors
+#          2. var = "45" + "55" --> output- errors
+        #   3. var = "rohit"*"5" --> output- errors
+        # 4. print("Rohit"*5.5) -->output- errors
+        
+var9 = "Rohit"
+var10 = 5
+print(var9*var10)
+
+# x = 100
+# y = 10
+# z = x%y
+# print(z)
+
+# error conditions 1
+
+# a = "rohit"
+# b = 2
+# c = a%b
+# print(c)
+
+# error conditions 2
+
+# a = "13"
+# b = 2
+# c = a%b
+# print(c)
+
+# Double divison operator
+
+r = 14.2352
+s = 2
+x = r//s
+print(x)
+
+# exponential -> **
+
+# comparsion operators -> ==,<,>,<=,>=,!=
+
+# Logical operators -> true - 1, true -0
+
+# 1. AND (&) - applied on bollean value for true and true only true for others False
+
+# 2. Or (|) - for false and false only false and others true
+
+# 3. NOT (!) - opposite to given value - true/false false/true
+
+# Bitwise operators - 
+
+# 1. & operator - 1 and 1 -> 1 only other are 0.
+# 2. | operator - 0 and 0 -> 0 only other are 1.
+# 1. ^= XOR operator - 1 and 1 -> 0 only other are 1.
+
+
+# python collection - list, set, tuple, dictationary
+
+# list -
+
+studentList = ["yogesh","rahul","sumit","harsh"]
+# indexing ->      0,       1,      2,       3
+# -ve indexing ->    -4,      -3,      -2,     -1,      
+print(studentList[1])
+print(studentList[-3])
+
+# error - print(studentList[11]) -> index out of range
+
+print(studentList[2]+" Verma")
+
+print(studentList)
+
+print(len(studentList))
+
+print("rahul" in studentList)
+
+# dataype does not matter any value can be stored
+
+py_student = ["harsh", True, 12.36, 14, False]
+print(py_student)
+
+ans =( py_student[2]+3)
+print(ans)
+
+# Nested list
+    
+nestedList = ["Akki", "mahajan", -112, [ 23, "Edi", 45.21, "lily", True], False]
+# indexing ->      0,       1,      2,       3,
+#                     4
+print(nestedList[3])
+# this will return the second list which also cantians same indexing
+print(nestedList[3][3])
+# this will return the 3 index element of second list
+
+
+# Slice in list --> Listname[start_idx : end_idx]  list will exclude the end_idx and innclude start_idx
+
+my_list = ["H","J","K","L"]
+
+# print(my_list[1:5])
+# print(my_list[1:15])
+# print(my_list[-1:5])
+# print(my_list[:5])
+# print(my_list[1:])
+# print(my_list[-1:-5])
+# print(my_list[:])
+# print(my_list[1:5:2])
+# print(my_list[1:5:3])
+# print(my_list[:5:3])
+# print(my_list[1::3])
+# print(my_list[1:5:])
+# print(my_list[-1:-5:-2])
+
+# Update the value of list
+
+my_list[0] = "R"
+print(my_list)
+
+# Update the value of list using Slice
+
+my_list[1:3] = ["G","J","I"]
+print(my_list)
+
+# Length Function
+
+print(len(my_list))
+
+# length of nested list
+
+my_list1 = ["G",["F","O"],"J","I"]
+print(len(my_list1))
+
+# Extend list
+
+my_list1.extend(["D","E"])
+print(my_list1)
+
+# Insert element on any particular idx
+
+my_list1.insert(4, 55)
+print(my_list1)
+
+# Check the value in list by membership offer
+
+print("D" in my_list1)
+
+# Delete the value from list by POP -> works on idx & REMOVE -> works on value
+
+print(my_list1.pop(2))
+print(my_list1.remove("I"))
+
+my_list3 = ["G","J","I","I"]
+print(my_list3.remove("I"))
+
+# Tuple is similar to list other then it uses {}
+# tuple does not allow u to update value once inserted.
+
+

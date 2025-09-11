@@ -1,0 +1,6 @@
+Syntax Analysis (also known as parsing) is the step after Lexical Analysis. The Lexical analysis breaks source code into tokens.
+
+Tokens are inputs for Syntax Analysis.
+The goal of Syntax Analysis is to interpret the meaning of these tokens.
+It checks whether the tokens produced by the lexical analyzer are arranged according to the language's grammar.
+The syntax analyzer attempts to build a Parse Tree or Abstract Syntax Tree (AST), which represents the program's structure.

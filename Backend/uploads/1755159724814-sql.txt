@@ -1,0 +1,3 @@
+SQL stands for Structured Query Language — it’s the standard programming language used to interact with relational databases.
+
+You can think of SQL as a “universal translator” between you and a database. Instead of manually digging through millions of records, you write a query in SQL, and the database quickly finds, updates, deletes, or adds the data for you.
