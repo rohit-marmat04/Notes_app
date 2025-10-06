@@ -32,6 +32,30 @@ The platform ensures secure access using **Google OAuth** authentication.
 
 ---
 
+
+
+---
+## 📁 Folder Structure
+
+NoteShala/
+├── client/               # React frontend
+│   ├── src/
+│   │   ├── components/   # Reusable UI components
+│   │   ├── pages/        # Page components (Home, Notes, Profile, etc.)
+│   │   ├── context/      # Context API for global state
+│   │   └── App.js
+│   └── package.json
+│
+├── server/               # Node.js + Express backend
+│   ├── models/           # Mongoose schemas
+│   ├── routes/           # API routes
+│   ├── controllers/      # Business logic
+│   ├── middleware/       # Auth & error handling
+│   └── server.js
+│
+└── README.md
+
+
 ## ⚙️ Installation and Setup
 
 Follow these steps to set up NoteShala locally:
@@ -64,8 +88,6 @@ npm start
 npm run dev
 
 ---
-
-## 🛠️ Tech Stack
 
 
 
