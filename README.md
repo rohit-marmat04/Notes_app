@@ -81,4 +81,32 @@ NoteShala/
 │   └── server.js
 │
 └── README.md
+---
+
+# 📦 Usage
+
+Once **NoteShala** is running locally or deployed:
+
+1. **Sign in** using your Google account for secure access.  
+2. **Explore Subjects** on the Home Page to view available notes for different courses and semesters.  
+3. Use the **Search Form** to quickly find notes based on:
+   - Course name  
+   - College name  
+   - Semester  
+   - Subject name  
+4. Click on any subject card to visit its **Template Page**, which includes:
+   - Assessment quizzes 🧠  
+   - Previous Year Questions (PYQs) 📄  
+   - Specific topic notes 📘  
+5. Visit the **Notes Page** to read or download study materials.  
+6. Go to the **Handwritten Notes Section** for high-quality handwritten notes uploaded by contributors.  
+7. Check the **Notification Bar** to stay updated about ongoing placement opportunities and internship openings.  
+8. Use the **Support Section** for any technical queries.  
+9. Refer to the **FAQ Section** for help with general questions.
+
+---
+
+## 📁 Folder Structure
+
+
 
