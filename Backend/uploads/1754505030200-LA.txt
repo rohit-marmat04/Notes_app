@@ -1,1 +1,87 @@
 Lexical analysis is the first phase of a compiler. It takes modified source code from language preprocessors that are written in the form of sentences. The lexical analyzer breaks these syntaxes into a series of tokens, by removing any whitespace or comments in the source code.
+
+# Tokens and Lexemes in Compiler Design
+
+---
+
+## What is a Token?
+
+A **token** is a sequence of characters that can be treated as a **unit** in the grammar of a programming language.
+
+### Categories of Tokens
+
+1. **Keywords**  
+   Reserved words with specific meanings used to define the language's structure.  
+   - Examples in C: `if`, `else`, `for`, `void`  
+   - Cannot be used as variable names or identifiers.  
+   - C has a total of **32 keywords**.
+
+2. **Identifiers**  
+   Names for variables, functions, arrays, or other user-defined items.  
+   - Must start with a letter or underscore (`_`).  
+   - Can include letters, digits, and underscores.  
+   - Case-sensitive (`a` ≠ `A`).  
+   - Cannot be the same as keywords.
+
+3. **Constants**  
+   Fixed values that **cannot change** during program execution, also called literals.  
+   - Types include integers, floating-point numbers, characters, and strings.
+
+4. **Operators**  
+   Symbols that perform actions on variables or other data items (operands).  
+   - Examples: `+`, `-`, `*`, `/`, `=`, `==`
+
+5. **Special Symbols**  
+   Symbols used for specific purposes in code structure or operations.  
+   - Examples:  
+     - `;` → End statements  
+     - `,` → Separate values  
+     - `{}` → Code blocks  
+     - `[]` → Arrays  
+
+> Read more about Tokens.
+
+---
+
+## What is a Lexeme?
+
+A **lexeme** is the actual string of characters that matches a pattern and generates a token.  
+
+**Examples:**  
+`float`, `abs_zero_Kelvin`, `=`, `-`, `273`, `;`
+
+---
+
+## Lexemes and Tokens Representation
+
+| Lexeme | Token        | Lexeme            | Token        |
+|--------|-------------|-----------------|-------------|
+| while  | WHILE       | a               | IDENTIFIER  |
+| (      | LAPREN      | =               | ASSIGNMENT  |
+| a      | IDENTIFIER  | a               | IDENTIFIER  |
+| >=     | COMPARISON  | -               | ARITHMETIC  |
+| b      | IDENTIFIER  | 2               | INTEGER     |
+| )      | RPAREN      | ;               | SEMICOLON   |
+
+---
+
+## How Lexical Analyzer Works
+
+- Tokens in a programming language can be described using **regular expressions**.  
+- A **scanner** or **lexical analyzer** uses a **Deterministic Finite Automaton (DFA)** to recognize these tokens.  
+- Each **final state** of the DFA corresponds to a specific token type, allowing the scanner to classify the input.  
+- Creating a DFA from regular expressions can be automated, making token recognition efficient.
+
+> Read more about the Working of Lexical Analyzer in Compilers.
+
+### Error Detection
+
+- The lexical analyzer identifies errors based on the DFA and language grammar (e.g., C, C++).  
+- It provides the **row and column number** of the error.
+
+### Example
+
+Consider the statement:
+
+```c
+a = b + c;

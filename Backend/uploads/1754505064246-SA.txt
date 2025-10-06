@@ -1,6 +1,114 @@
-Syntax Analysis (also known as parsing) is the step after Lexical Analysis. The Lexical analysis breaks source code into tokens.
+# Introduction to Syntax Analysis in Compiler Design
 
-Tokens are inputs for Syntax Analysis.
-The goal of Syntax Analysis is to interpret the meaning of these tokens.
-It checks whether the tokens produced by the lexical analyzer are arranged according to the language's grammar.
-The syntax analyzer attempts to build a Parse Tree or Abstract Syntax Tree (AST), which represents the program's structure.
+**Syntax Analysis** (also known as **parsing**) is the step after **Lexical Analysis**.  
+Lexical analysis breaks source code into **tokens**, which are then used as input for syntax analysis.
+
+The main goals of syntax analysis are:
+
+- Interpret the meaning of tokens produced by lexical analysis.
+- Verify that tokens are arranged according to the language's grammar.
+- Build a **Parse Tree** or **Abstract Syntax Tree (AST)** representing the program's structure.
+
+---
+
+## Key Concepts of Syntax Analysis
+
+In syntax analysis, the following key concepts help in understanding and verifying the structure of the source code:
+
+### 1. Context-Free Grammars (CFG)
+
+- Define the syntax rules of a programming language.
+- Consist of **production rules** describing how valid strings (token sequences) are formed.
+- Ensure that source code adheres to the correct syntax.
+
+### 2. Derivations
+
+- A **derivation** is the process of applying CFG rules to generate a sequence of tokens.
+- Helps in constructing a **parse tree**, representing the syntactic structure of the code.
+
+### 3. Concrete and Abstract Syntax Trees
+
+- **Concrete Syntax Tree (CST):** Represents the full syntactic structure, including every grammar detail.  
+- **Abstract Syntax Tree (AST):** A simplified version focusing on essential elements, removing redundant syntax to facilitate further processing.
+
+### 4. Ambiguity
+
+- Occurs when a grammar allows multiple interpretations for the same token sequence.
+- Ambiguity can lead to parsing errors or inconsistencies, so it must be avoided in language design.
+
+> These formalisms are essential for accurate syntax analysis and ensuring that source code follows correct grammar.
+
+---
+
+## Features of Syntax Analysis
+
+### 1. Syntax Trees
+
+- Creates hierarchical representations of code structure.
+- Shows relationships between statements, expressions, and operators.
+
+### 2. Context-Free Grammar
+
+- Used to formally define the language syntax.
+- Helps the parser recognize valid code structures.
+
+### 3. Parsing Approaches
+
+- **Top-Down Parsing:** Starts from the highest-level syntax node and works downward.  
+- **Bottom-Up Parsing:** Starts from tokens at the leaves and builds up to the root.
+
+### 4. Error Detection
+
+- Responsible for identifying syntax errors.
+- If code violates grammar rules, the parser reports an error and halts compilation.
+
+### 5. Intermediate Code Generation
+
+- Generates an intermediate representation of code for later compiler phases.
+- Easier to work with than the original source code.
+
+### 6. Optimization
+
+- Performs basic optimizations, such as removing redundant code or simplifying expressions.
+
+---
+
+# Context-Free Grammar (CFG)
+
+A **Context-Free Grammar (CFG)** offers a powerful way to define languages, overcoming the limitations of regular expressions. Unlike regular expressions, CFGs can handle complex structures, such as:
+
+- Properly balanced parentheses
+- Functions with nested block structures
+
+CFGs define **context-free languages**, which are a strict superset of regular languages. They use **production rules** to describe how symbols in a language can be replaced, allowing for more flexibility in defining programming language syntax.  
+
+> This makes CFGs ideal for representing the grammar of programming languages.
+
+---
+
+# Parse Tree
+
+A **parse tree**, also known as a **syntax tree**, is a tree structure that represents the syntactic structure of a string according to a given Context-Free Grammar (CFG). It shows how a particular string can be derived from the **start symbol** of the grammar using its production rules.
+
+### Structure of a Parse Tree
+
+- **Root node:** Represents the start symbol of the grammar  
+- **Internal nodes:** Represent non-terminal symbols, which are expanded according to production rules  
+- **Leaf nodes:** Represent terminal symbols, which are the actual tokens from the input string  
+
+### Example
+
+Suppose the production rules for a grammar are:
+
+
+The parse tree for this string would look like:
+
+### graph TD
+
+-   S --> C[c]
+-   S --> A[A]
+-   S --> D[d]
+-   A --> a[a]
+
+
+

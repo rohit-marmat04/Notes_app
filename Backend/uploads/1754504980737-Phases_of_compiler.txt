@@ -1,1 +1,77 @@
-The compilation process is a sequence of various phases. Each phase takes input from its previous stage, has its own representation of source program, and feeds its output to the next phase of the compiler. Let us understand the phases of a compiler.
+# Introduction to Compiler Design
+
+The compilation process is a sequence of various phases. Each phase takes input from its previous stage, has its own representation of the source program, and feeds its output to the next phase of the compiler. Let us understand the phases of a compiler.
+
+---
+
+## Operations of Compilers
+
+Some operations performed by a compiler include:
+
+- Breaking source programs into smaller parts.
+- Creating symbol tables and intermediate representations.
+- Detecting errors in the code.
+- Saving all code and variables.
+- Analyzing the full program and translating it.
+- Converting source code to machine code.
+
+---
+
+## Compiler and Other Language Processing Systems
+
+A computer consists of both **hardware** and **software**. The hardware understands a low-level language that is hard for humans to comprehend. High-level programming languages simplify this, but programs must be transformed for machines. Language processing systems (compilers, interpreters, etc.) handle these transformations.
+
+### Pre-Processor
+
+- Removes all `#include` directives by including the files.
+- Expands all `#define` macros.
+- Performs file inclusion, augmentation, and macro processing.
+
+Example: `#include "stdio.h"` is replaced by the content of the file.
+
+### Assembler
+
+- Converts assembly language (intermediate form) into machine code.
+- Platform-specific; produces an **object file**.
+
+### Compiler
+
+- Verifies limits, ranges, and errors.
+- Translates the entire program into machine code.
+- Slower and consumes more memory than other system software.
+
+### Interpreter
+
+- Converts high-level code into machine code **line by line**.
+- Slower than compiled programs.
+- Processes input differently than a compiler, which translates the entire program at once.
+
+### Loader/Linker
+
+- **Linker:** Merges multiple object files into a single executable.
+- **Loader:** Loads the executable into memory and runs it, calculating exact memory addresses.
+
+---
+
+## Types of Compilers
+
+- **Self Compiler (Resident Compiler):** Runs on a machine and generates code for the same machine.  
+- **Cross Compiler:** Runs on one machine and generates code for a different platform.  
+- **Source-to-Source Compiler (Transpiler):** Translates code from one programming language to another.  
+- **Single-Pass Compiler:** All phases are in a single module; converts source code to machine code.  
+- **Two-Pass Compiler:** Translates the program twice, using front-end and back-end processing.  
+- **Multi-Pass Compiler:** Creates several intermediate codes and processes the syntax tree multiple times.  
+- **Just-in-Time (JIT) Compiler:** Converts code to machine language during execution for faster runtime.  
+- **Ahead-of-Time (AOT) Compiler:** Converts the entire source code to machine code before execution.  
+- **Incremental Compiler:** Compiles only changed code parts, improving efficiency during development.
+
+---
+
+## History of Compilers
+
+- **1950s:** Grace Hopper developed the first compiler → languages like **FORTRAN (1957)**, **LISP (1958)**, **COBOL (1959)**.  
+- **1960s:** Innovations like **ALGOL**.  
+- **1970s:** Introduction of **C** and **Pascal**.  
+- **Modern Compilers:** Focus on optimization, object-oriented features, and **Just-in-Time compilation**.  
+
+Compilers have revolutionized programming, enabling complex systems and improving software efficiency.

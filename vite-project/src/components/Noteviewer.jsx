@@ -4,6 +4,13 @@ import axios from "axios";
 import Navbar from "../components/Navbar.jsx";
 import { FaArrowLeft } from "react-icons/fa";
 import { IoMenu } from "react-icons/io5";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import { remarkMermaid } from "@theguild/remark-mermaid";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+import rehypeRaw from "rehype-raw";
+import "katex/dist/katex.min.css";
 
 export default function NoteViewer() {
   const { id } = useParams();
@@ -59,7 +66,6 @@ export default function NoteViewer() {
       <Navbar />
 
       <div className="flex gap-6 max-w-8xl mx-auto mt-4 relative">
-        {/* Sidebar Toggle Button */}
         {!sidebarOpen && (
           <button
             onClick={() => setSidebarOpen(true)}
@@ -69,7 +75,6 @@ export default function NoteViewer() {
           </button>
         )}
 
-        {/* Sidebar */}
         {sidebarOpen && (
           <aside className="w-64 bg-gray-900 border rounded-lg p-4 shadow-sm h-fit relative transition-all duration-300">
             <button
@@ -98,32 +103,74 @@ export default function NoteViewer() {
           </aside>
         )}
 
-        {/* Main Content */}
         <div className="flex-1 pl-13 bg-gray-900 shadow rounded-lg p-6 transition-all duration-300">
-          {/* Note Title */}
           <h2 className="text-2xl text-white font-bold mb-2">{note.noteTitle}</h2>
           <p className="text-white border-b pb-2 mb-6">Subject: {note.subject}</p>
 
-          {/* Note Content */}
           {note.noteType === "text" ? (
-            <div className="prose max-w-none text-white">
-              {textContent.split("\n").map((line, idx) => {
-                // Detect code-like lines
-                if (
-                  line.trim().startsWith("#") ||
-                  line.trim().match(/^[a-zA-Z0-9_]+\s*=/)
-                ) {
-                  return (
-                    <pre
-                      key={idx}
-                      className="bg-gray-900 text-white p-3 rounded mb-3 overflow-x-auto"
-                    >
-                      <code>{line}</code>
-                    </pre>
-                  );
-                }
-                return <p key={idx}>{line}</p>;
-              })}
+            <div className="prose prose-invert max-w-none">
+              <ReactMarkdown
+                remarkPlugins={[
+                  remarkGfm,
+                  remarkMath,
+                  [
+                    remarkMermaid,
+                    {
+                      mermaidOptions: {
+                        theme: "base", // allows full color customization
+                        themeVariables: {
+                          primaryColor: "#ffffff",       // node background
+                          secondaryColor: "#000000",     // node border
+                          tertiaryColor: "#000000",      // text color
+                          edgeLabelBackground: "#ffffff" // edge label background
+                        },
+                      },
+                    },
+                  ],
+                ]}
+                rehypePlugins={[rehypeRaw, rehypeKatex]}
+                components={{
+                  h1: ({ node, ...props }) => (
+                    <h1 className="text-3xl font-bold text-blue-400 mb-4" {...props} />
+                  ),
+                  h2: ({ node, ...props }) => (
+                    <h2 className="text-2xl font-semibold text-blue-300 mt-4 mb-2" {...props} />
+                  ),
+                  h3: ({ node, ...props }) => (
+                    <h3 className="text-xl font-semibold text-blue-200 mt-3 mb-2" {...props} />
+                  ),
+                  p: ({ node, ...props }) => (
+                    <p className="text-gray-100 mb-3 leading-relaxed" {...props} />
+                  ),
+                  ul: ({ node, ...props }) => (
+                    <ul className="list-disc list-inside mb-3 text-gray-100" {...props} />
+                  ),
+                  ol: ({ node, ...props }) => (
+                    <ol className="list-decimal list-inside mb-3 text-gray-100" {...props} />
+                  ),
+                  strong: ({ node, ...props }) => (
+                    <strong className="font-bold text-yellow-300" {...props} />
+                  ),
+                  img: ({ node, ...props }) => (
+                    <img
+                      {...props}
+                      className="my-4 mx-auto rounded-lg shadow-lg border border-gray-700"
+                      alt={props.alt || "Image"}
+                    />
+                  ),
+                  table: ({node, ...props}) => (
+      <table className="table-auto border-collapse border border-gray-700 mb-4" {...props} />
+    ),
+    th: ({node, ...props}) => (
+      <th className="border border-gray-700 px-4 py-2 text-white bg-gray-800" {...props} />
+    ),
+    td: ({node, ...props}) => (
+      <td className="border border-gray-700 px-4 py-2 text-white" {...props} />
+    ),
+                }}
+              >
+                {textContent}
+              </ReactMarkdown>
             </div>
           ) : (
             <div className="text-center">
