@@ -85,17 +85,3 @@ npm run dev
 
 ---
 
-NoteShala/
-├── client/               # React frontend (Vite)
-│   ├── src/
-│   ├── public/
-│   └── package.json
-│
-├── server/               # Node.js + Express backend
-│   ├── routes/
-│   ├── models/
-│   ├── controllers/
-│   └── package.json
-│
-└── README.md
-
