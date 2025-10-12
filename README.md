@@ -9,6 +9,7 @@ The platform ensures secure access using **Google OAuth** authentication.
 ## Screenshots
 
 ![App Screenshot](https://github.com/rohit-marmat04/Notes_app/blob/main/Backend/ScreenShots/WhatsApp%20Image%202025-10-06%20at%2012.39.53%20(1).jpeg?raw=true)
+![Home Page](https://github.com/rohit-marmat04/Notes_app/blob/main/Backend/ScreenShots/WhatsApp%20Image%202025-10-12%20at%2021.00.42.jpeg?raw=true)
 
 ---
 
