@@ -8,8 +8,19 @@ The platform ensures secure access using **Google OAuth** authentication.
 
 ## Screenshots
 
-![App Screenshot](https://github.com/rohit-marmat04/Notes_app/blob/main/Backend/ScreenShots/WhatsApp%20Image%202025-10-06%20at%2012.39.53%20(1).jpeg?raw=true)
-![Home Page](https://github.com/rohit-marmat04/Notes_app/blob/main/Backend/ScreenShots/WhatsApp%20Image%202025-10-12%20at%2021.00.42.jpeg?raw=true)
+![Home Screenshot](https://github.com/rohit-marmat04/Notes_app/blob/main/Backend/ScreenShots/WhatsApp%20Image%202025-10-06%20at%2012.39.53%20(1).jpeg?raw=true)
+
+![TextNote Page](https://github.com/rohit-marmat04/Notes_app/blob/main/Backend/ScreenShots/WhatsApp%20Image%202025-10-12%20at%2021.00.42.jpeg?raw=true)
+
+![Register Page](https://github.com/rohit-marmat04/Notes_app/blob/main/Backend/ScreenShots/WhatsApp%20Image%202025-10-12%20at%2021.00.45.jpeg?raw=true)
+
+![Login Page](https://github.com/rohit-marmat04/Notes_app/blob/main/Backend/ScreenShots/WhatsApp%20Image%202025-10-12%20at%2021.00.44.jpeg?raw=true)
+
+![Content Page](https://github.com/rohit-marmat04/Notes_app/blob/main/Backend/ScreenShots/WhatsApp%20Image%202025-10-12%20at%2021.00.47.jpeg?raw=true)
+
+![Quiz Page](https://github.com/rohit-marmat04/Notes_app/blob/main/Backend/ScreenShots/WhatsApp%20Image%202025-10-12%20at%2021.00.48.jpeg?raw=true)
+
+![Time Out Quiz Page](https://github.com/rohit-marmat04/Notes_app/blob/main/Backend/ScreenShots/WhatsApp%20Image%202025-10-12%20at%2021.00.49.jpeg?raw=true)
 
 ---
 
