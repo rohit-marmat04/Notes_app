@@ -16,7 +16,7 @@ const TagPage = () => {
       try {
         if (tagName === "strings" || tagName === "sql" || tagName === "Phases of compiler" || tagName === "Lexical Analysis" || tagName === "Syntax Analysis" || tagName == "Three Address Code") {
           // Notes ke liye redirect
-          const res = await axios.get(`http://localhost:5000/api/notes/getnotebytagname?tagname=${tagName}`);
+          const res = await axios.get(`https://notes-app-1-3rxs.onrender.com/api/notes/getnotebytagname?tagname=${tagName}`);
           const noteData = res.data;
           const id = noteData._id;
           navigate(`/notes/${id}`);
@@ -28,7 +28,7 @@ const TagPage = () => {
         else {
           // Normal questions
           const res = await axios.get(
-            `http://localhost:5000/api/questions/getquestionbytopic?topic=${tagName}`
+            `https://notes-app-1-3rxs.onrender.com/api/questions/getquestionbytopic?topic=${tagName}`
           );
           setQuestions(res.data);
         }
