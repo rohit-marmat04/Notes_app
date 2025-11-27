@@ -20,7 +20,7 @@ const Support = () => {
     setStatus("Sending...");
 
     try {
-      await axios.post("http://localhost:5000/api/email/emailsupport", formData);
+      await axios.post("https://notes-app-1-3rxs.onrender.com/api/email/emailsupport", formData);
       setStatus("✅ Message sent successfully!");
       setFormData({ name: "", email: "", message: "" });
     } catch (err) {
