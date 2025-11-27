@@ -6,7 +6,7 @@ const AdminCardManager = () => {
   const [form, setForm] = useState({ title: '', description: '', buttonText: '', slug: '', });
 
   const fetchCards = async () => {
-    const res = await axios.get('http://localhost:5000/api/cards/getcard');
+    const res = await axios.get('https://notes-app-1-3rxs.onrender.com/api/cards/getcard');
     setCards(res.data);
   };
 
@@ -19,7 +19,7 @@ const AdminCardManager = () => {
     const token = localStorage.getItem("token");
     console.log("Token here ", token)
 
-    await axios.post('http://localhost:5000/api/cards/createcard', form, {
+    await axios.post('https://notes-app-1-3rxs.onrender.com/api/cards/createcard', form, {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -33,7 +33,7 @@ const AdminCardManager = () => {
   const token = localStorage.getItem("token"); // Replace "token" with your actual key
 
   try {
-    await axios.delete(`http://localhost:5000/api/cards/deletecard/${cardId}`, {
+    await axios.delete(`https://notes-app-1-3rxs.onrender.com/api/cards/deletecard/${cardId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
