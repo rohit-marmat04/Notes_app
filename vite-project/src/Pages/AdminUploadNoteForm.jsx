@@ -35,7 +35,7 @@ export default function AdminUploadNoteForm() {
     }
 
     try {
-      const res = await axios.post('http://localhost:5000/api/notes/upload', data);
+      const res = await axios.post('https://notes-app-1-3rxs.onrender.com/api/notes/upload', data);
       alert('Note uploaded successfully!');
       setForm({
         college: '',
