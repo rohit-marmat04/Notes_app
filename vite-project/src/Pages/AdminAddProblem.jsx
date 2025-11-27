@@ -19,7 +19,7 @@ export default function AdminForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:5000/api/problems", form);
+    await axios.post("https://notes-app-1-3rxs.onrender.com/api/problems", form);
     alert("Problem added successfully!");
     setForm({
       title: "",
