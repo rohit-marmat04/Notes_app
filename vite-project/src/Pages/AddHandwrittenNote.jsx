@@ -23,7 +23,7 @@ const AddHandwrittenNote = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/api/handwritten", form);
+      const res = await axios.post("https://notes-app-1-3rxs.onrender.com/api/handwritten", form);
       setMessage(res.data.message);
       setForm({
         college: "",
