@@ -6,7 +6,7 @@ export default function ProblemList() {
   const [problems, setProblems] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/problems")
+    axios.get("https://notes-app-1-3rxs.onrender.com/api/problems")
       .then(res => {
         console.log("ApI response : ", res.data);
         setProblems(res.data.data);
