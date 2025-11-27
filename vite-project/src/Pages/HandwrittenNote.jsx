@@ -22,7 +22,7 @@ const HandwrittenNote = () => {
   // Fetch all notes
   const fetchNotes = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/notes/gethandwrittennotesbyfilters");
+      const res = await axios.get("https://notes-app-1-3rxs.onrender.com/api/notes/gethandwrittennotesbyfilters");
       setNotes(res.data);
     } catch (err) {
       console.error("Error fetching notes:", err);
@@ -34,7 +34,7 @@ const HandwrittenNote = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/notes/uploadhandwrittennotes", // your backend route
+        "https://notes-app-1-3rxs.onrender.com/api/notes/uploadhandwrittennotes", // your backend route
         formData
       );
       setMessage(res.data.message);
@@ -60,7 +60,7 @@ const HandwrittenNote = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this note?")) return;
     try {
-      const res = await axios.delete(`http://localhost:5000/api/notes/deletehandwritten/${id}`);
+      const res = await axios.delete(`https://notes-app-1-3rxs.onrender.com/api/notes/deletehandwritten/${id}`);
       setMessage(res.data.message);
       console.log(message);
       fetchNotes(); // refresh list after delete
