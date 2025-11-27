@@ -25,21 +25,21 @@ export default function NoteViewer() {
   const fetchNote = async (noteId) => {
     try {
       setLoading(true);
-      const res = await axios.get(`http://localhost:5000/api/notes/${noteId}`);
+      const res = await axios.get(`https://notes-app-1-3rxs.onrender.com/api/notes/${noteId}`);
       const noteData = res.data;
 
       setNote(noteData);
 
       if (noteData.noteType === "text") {
         const filePath = noteData.filePath.replace(/\\/g, "/");
-        const textRes = await axios.get(`http://localhost:5000/${filePath}`);
+        const textRes = await axios.get(`https://notes-app-1-3rxs.onrender.com/${filePath}`);
         setTextContent(textRes.data);
       } else {
         setTextContent("");
       }
 
       const otherRes = await axios.get(
-        `http://localhost:5000/api/notes/bysubject?subject=${noteData.subject}`
+        `https://notes-app-1-3rxs.onrender.com/api/notes/bysubject?subject=${noteData.subject}`
       );
       setOtherNotes(otherRes.data);
       setLoading(false);
