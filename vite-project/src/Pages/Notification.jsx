@@ -8,7 +8,7 @@ const Notification = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/api/notifications/getnotifications')
+      .get('https://notes-app-1-3rxs.onrender.com/api/notifications/getnotifications')
       .then((res) => {
         setNotifications(res.data.notifications || []); // fallback to empty array
       })
