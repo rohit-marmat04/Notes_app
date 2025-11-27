@@ -16,7 +16,7 @@ const AptitudeTest = ({ testTitle }) => {
     const fetchTest = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/test/gettestbytitle/${testTitle}`
+          `https://notes-app-1-3rxs.onrender.com/api/test/gettestbytitle/${testTitle}`
         );
         setTest(res.data);
 
