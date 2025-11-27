@@ -19,7 +19,7 @@ const SearchBox = ({ placeholder = "", onSearchChange }) => {
   useEffect(() => {
     const fetchTags = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/topics/alltopics");
+        const res = await axios.get("https://notes-app-1-3rxs.onrender.com/api/topics/alltopics");
         console.log("Fetched tags:", res.data);
         setAllTags(res.data);
         setFilteredTags(res.data);
