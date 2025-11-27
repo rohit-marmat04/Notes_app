@@ -11,7 +11,7 @@ const TemplatePage = () => {
   useEffect(() => {
     const fetchTemplate = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/template/${slug}`);
+        const res = await axios.get(`https://notes-app-1-3rxs.onrender.com/api/template/${slug}`);
         setTemplate(res.data);
       } catch (err) {
         console.error("Error fetching template:", err);
