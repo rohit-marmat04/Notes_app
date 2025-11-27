@@ -5,7 +5,7 @@ const LearningPathSection = () => {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/cards/getcard')
+    fetch('https://notes-app-1-3rxs.onrender.com/api/cards/getcard')
       .then(res => res.json())
       .then(data => {
         setCards(data);
