@@ -15,7 +15,7 @@ const AdminDashboard = () => {
   // Fetch all templates
   const fetchTemplates = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/template");
+      const res = await axios.get("https://notes-app-1-3rxs.onrender.com/api/template");
       setTemplates(res.data);
     } catch (err) {
       console.error("Error fetching templates:", err);
@@ -38,7 +38,7 @@ const AdminDashboard = () => {
   // Add Template
   const handleAddTemplate = async () => {
     try {
-      await axios.post("http://localhost:5000/api/template/updatetemplate", {
+      await axios.post("https://notes-app-1-3rxs.onrender.com/api/template/updatetemplate", {
         ...newTemplate,
         sections: newTemplate.sections.split(",").map((s) => s.trim()),
         topics: formatTopicsForSave(newTemplate.topics),
@@ -62,7 +62,7 @@ const AdminDashboard = () => {
   const handleDeleteTemplate = async (slug) => {
     if (!window.confirm("Delete this template?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/template/${slug}`);
+      await axios.delete(`https://notes-app-1-3rxs.onrender.com/api/template/${slug}`);
       alert("Template deleted!");
       fetchTemplates();
     } catch (err) {
@@ -74,7 +74,7 @@ const AdminDashboard = () => {
   // Update Template
   const handleUpdateTemplate = async () => {
     try {
-      await axios.post("http://localhost:5000/api/template/updatetemplate", {
+      await axios.post("https://notes-app-1-3rxs.onrender.com/api/template/updatetemplate", {
         ...editingTemplate,
         sections: editingTemplate.sections.split(",").map((s) => s.trim()),
         topics: formatTopicsForSave(editingTemplate.topics),
