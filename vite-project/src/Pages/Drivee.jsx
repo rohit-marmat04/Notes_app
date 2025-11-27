@@ -26,7 +26,7 @@ const Drivee = () => {
       });
 
       const res = await axios.get(
-        "http://localhost:5000/api/notes/gethandwrittennotesbyfilters",
+        "https://notes-app-1-3rxs.onrender.com/api/notes/gethandwrittennotesbyfilters",
         { params }
       );
 
