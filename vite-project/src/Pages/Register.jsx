@@ -25,7 +25,7 @@ const Register = () => {
             console.log("Google Register User:", decoded);
 
             // Backend call
-            const res = await fetch("http://localhost:5000/api/auth/google-register", {
+            const res = await fetch("https://notes-app-1-3rxs.onrender.com/api/auth/google-register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -67,7 +67,7 @@ const Register = () => {
         }
 
         try {
-            const res = await fetch('http://localhost:5000/api/users/register', {
+            const res = await fetch('https://notes-app-1-3rxs.onrender.com/api/users/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 credentials: 'include',
