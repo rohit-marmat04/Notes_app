@@ -41,7 +41,7 @@ const AdminAddTest = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/test/create", {
+      const res = await axios.post("https://notes-app-1-3rxs.onrender.com/api/test/create", {
         title,
         duration,
         questions,
