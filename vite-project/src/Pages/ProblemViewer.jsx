@@ -10,7 +10,7 @@ export default function ProblemViewer() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/problems/${id}`)
+      .get(`https://notes-app-1-3rxs.onrender.com/api/problems/${id}`)
       .then((res) => {
         console.log("API Response:", res.data);
         setProblem(res.data.data);
