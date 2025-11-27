@@ -14,7 +14,7 @@ const AdminEditNotification = () => {
 
   const fetchNotifications = async () => {
     try{
-      const res = await axios.get('http://localhost:5000/api/notifications/getnotifications');
+      const res = await axios.get('https://notes-app-1-3rxs.onrender.com/api/notifications/getnotifications');
        if (Array.isArray(res.data.notifications)) {
       setNotifications(res.data.notifications);
     } else {
@@ -41,9 +41,9 @@ const AdminEditNotification = () => {
     e.preventDefault();
     try {
       if (editingId) {
-        await axios.put(`http://localhost:5000/api/notifications/updatenotifications${editingId}`, form);
+        await axios.put(`https://notes-app-1-3rxs.onrender.com/api/notifications/updatenotifications${editingId}`, form);
       } else {
-        await axios.post('http://localhost:5000/api/notifications/addnotifications', form);
+        await axios.post('https://notes-app-1-3rxs.onrender.com/api/notifications/addnotifications', form);
       }
       setForm({ title: '', type: 'job', description: '', link: '', buttonLabel: 'Apply' });
       setEditingId(null);
@@ -60,7 +60,7 @@ const AdminEditNotification = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/notifications/deletenotifications${id}`);
+      await axios.delete(`https://notes-app-1-3rxs.onrender.com/api/notifications/deletenotifications${id}`);
       fetchNotifications();
     } catch (err) {
       console.error('Error deleting notification', err);
