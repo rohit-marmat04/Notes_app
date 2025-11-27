@@ -26,7 +26,7 @@ export default function NoteSearchForm() {
       if (form.noteType === 'text') {
         // ✅ Text notes API
         const query = new URLSearchParams(form).toString();
-        res = await axios.get(`http://localhost:5000/api/notes/getnotebyfilters?${query}`);
+        res = await axios.get(`https://notes-app-1-3rxs.onrender.com/api/notes/getnotebyfilters?${query}`);
 
         if (!res.data || !res.data.noteId) {
           alert("No text notes found!");
@@ -45,7 +45,7 @@ export default function NoteSearchForm() {
           subject: form.subject,
         }).toString();
 
-        res = await axios.get(`http://localhost:5000/api/notes/gethandwrittennotesbyfilters?${query}`);
+        res = await axios.get(`https://notes-app-1-3rxs.onrender.com/api/notes/gethandwrittennotesbyfilters?${query}`);
 
         if (!res.data || res.data.length === 0) {
           alert("No handwritten notes found!");
