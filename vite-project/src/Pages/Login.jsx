@@ -16,7 +16,7 @@ function Login() {
   // ✅ Google login handler
   const handleGoogleLogin = async (credentialResponse) => {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/google-login", {
+      const res = await fetch("https://notes-app-1-3rxs.onrender.com/api/auth/google-login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ token: credentialResponse.credential }), // 👈 yaha sirf token bhejna hai
@@ -49,7 +49,7 @@ function Login() {
     }
 
     try {
-      const res = await fetch('http://localhost:5000/api/users/login', {
+      const res = await fetch('https://notes-app-1-3rxs.onrender.com/api/users/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
